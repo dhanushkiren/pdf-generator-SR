@@ -1,0 +1,21 @@
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+   padding: 2rem;
+  background: #000;
+}
+
+label{
+  color: aqua;
+}
+button{
+   color: black;
+   background: S#bc9a13;
+}
