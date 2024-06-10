@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../App.css";
+import "./CreatePdf.css";
+import { toast } from "react-toastify";
 
 const CreatePdf = () => {
   const [inputData, setInputData] = useState("");
@@ -21,9 +22,10 @@ const CreatePdf = () => {
       if (response.status === 201) {
         const url = window.URL.createObjectURL(new Blob([response.data]));
         setPdfUrl(url);
-        console.log("PDF created");
+        toast.success("successfully converted and ready to download");
       } else if (response.status === 400) {
         const errorText = await response.error;
+        console.log("dkdk eorro");
 
         console.log(errorText);
       } else if (response.status === 409) {
@@ -54,19 +56,27 @@ const CreatePdf = () => {
 
   return (
     <div className="App">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="pdf-form">
         <label htmlFor="input-data">Input data:</label>
         <textarea
           name="input-data"
           id="input-data"
+          required
           rows="4"
           cols="50"
           value={inputData}
           onChange={handleInputChange}
         ></textarea>
         <br />
-        <button type="submit">Convert</button>
-        {pdfUrl && <button onClick={handleDownload}>Download</button>}
+
+        <button type="submit" className="submit-button">
+          Convert
+        </button>
+        {pdfUrl && (
+          <button onClick={handleDownload} className="download-button">
+            Download
+          </button>
+        )}
       </form>
     </div>
   );
