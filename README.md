@@ -6,8 +6,9 @@ For frontend
 for Backend 
 1. Go to the Backend folder.
 2. In CMD first install "pipenv" by typeing the commend "pip install pipenv".
-3. Then type "pipenv install" to install neccessary python packages.
-4. After these steps type "python run.py" to start the server.
+3. Activate the virtual Environment by typing the command "pipenv shell".
+4. Then type "pipenv install" to install neccessary python packages.
+5. After these steps type "python run.py" to start the server. ( http://127.0.0.1:5000 )
 
 NOTE:
 1. First start the backend server then Start the frontend application.
