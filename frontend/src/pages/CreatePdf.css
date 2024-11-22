@@ -1,67 +1,130 @@
-.App {
+/* Base Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #fb2424;
+}
+
+/* Container */
+.app-container {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin :auto;
-  
-  background-color: #f0f2f5;
-  margin-top: 10rem;
-  padding: 50px;
+  padding: 20px;
 }
 
-.pdf-form {
-  background: white;
+/* Card */
+.card {
+  background: #ffffff;
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.pdf-form label {
-  display: block;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.pdf-form textarea {
+  border-radius: 12px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
   width: 100%;
-  padding: 0.5rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  max-width: 500px;
+  text-align: center;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Title */
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2575fc;
   margin-bottom: 1rem;
 }
 
+/* Description */
+.description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Form */
+.pdf-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  gap: 0.8rem;
+  margin-left: 2rem;
+  background-color: #ffffff;
+}
+
+.form-label {
+  font-size: 1rem;
+  color: #2575fc;
+  font-weight: 500;
+  text-align: center;
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.form-textarea:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+}
+
+/* Buttons */
 .submit-button,
 .download-button {
-  background-color: #007bff;
-  color: white;
+  background: #2575fc;
+  color: #fff;
   border: none;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
-  border-radius: 4px;
-  margin-bottom: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: transform 0.2s, background-color 0.3s;
 }
 
 .submit-button:hover,
 .download-button:hover {
-  background-color: #0056b3;
+  background: #6a11cb;
 }
 
 .submit-button:active,
 .download-button:active {
-  transform: translateY(2px);
+  transform: scale(0.95);
 }
 
+/* Download Button Animation */
 .download-button {
-  animation: bounce 0.5s ease-in-out alternate;
-  animation-iteration-count: 5;
-  
+  animation: bounce 1s infinite ease-in-out;
 }
 
 @keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
   to {
-    transform: translateY(-5px);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
