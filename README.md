@@ -1,3 +1,16 @@
+
+
+## DEMO fo the PDF Generator Application with DB
+
+Thi project uses reactJS, python flask and mongodb for database
+
+
+
+https://github.com/user-attachments/assets/a545223b-227c-4654-b4ec-f2b937710087
+
+
+to run the application
+
 For frontend 
 1. Go to the frontend folder.
 2. In CMD type "npm install" to install the neccessary pakages.
